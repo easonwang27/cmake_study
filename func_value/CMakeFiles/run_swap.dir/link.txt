@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/run_swap.dir/src/run.c.o CMakeFiles/run_swap.dir/src/swap.c.o CMakeFiles/run_swap.dir/src/print.c.o  -o run_swap -rdynamic 

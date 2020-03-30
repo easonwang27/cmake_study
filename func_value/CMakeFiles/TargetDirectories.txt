@@ -1,0 +1,3 @@
+/home/ea/work/cmake/cmake_study/func_value/CMakeFiles/edit_cache.dir
+/home/ea/work/cmake/cmake_study/func_value/CMakeFiles/rebuild_cache.dir
+/home/ea/work/cmake/cmake_study/func_value/CMakeFiles/run_swap.dir
