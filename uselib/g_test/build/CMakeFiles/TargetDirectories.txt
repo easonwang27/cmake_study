@@ -1,0 +1,7 @@
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/install.dir
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/list_install_components.dir
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/rebuild_cache.dir
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/lib_run.dir
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/edit_cache.dir
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/install/strip.dir
+/home/ea/work/cmake/cmake_study/uselib/g_test/build/CMakeFiles/install/local.dir

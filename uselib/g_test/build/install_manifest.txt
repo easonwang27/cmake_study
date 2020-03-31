@@ -1,0 +1,2 @@
+/home/ea/work/cmake/cmake_study/uselib/g_test/lib/liblib_run.so
+/home/ea/work/cmake/cmake_study/uselib/g_test/include/g_test.h

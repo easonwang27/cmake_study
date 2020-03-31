@@ -1,0 +1,3 @@
+/home/ea/work/cmake/cmake_study/uselib/use_lib/build/CMakeFiles/edit_cache.dir
+/home/ea/work/cmake/cmake_study/uselib/use_lib/build/CMakeFiles/rebuild_cache.dir
+/home/ea/work/cmake/cmake_study/uselib/use_lib/build/CMakeFiles/use_run.dir

@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/use_run.dir/usr_lib.c.o  -o use_run -rdynamic ../../g_test/lib/liblib_run.so -Wl,-rpath,/home/ea/work/cmake/cmake_study/uselib/use_lib/../g_test/lib 

@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.6)
+project(use_run)
+#
+include_directories(
+	${PROJECT_SOURCE_DIR}/../g_test/include
+)
+add_executable(use_run usr_lib.c)
+target_link_libraries(use_run ${PROJECT_SOURCE_DIR}/../g_test/lib/liblib_run.so)

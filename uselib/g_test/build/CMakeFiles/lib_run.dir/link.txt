@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,liblib_run.so -o liblib_run.so CMakeFiles/lib_run.dir/libtest/g_test.c.o 
