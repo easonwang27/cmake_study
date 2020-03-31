@@ -9,5 +9,6 @@ include_directories(include)
 
 #However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "src/*.c")
-
-add_executable(run_swap ${SOURCES})
+add_library(run_lib SHARED ${SOURCES})
+#add_executable(run_swap ${SOURCES})
+install(TARGETS run_lib DESTINATION /usr/lib)

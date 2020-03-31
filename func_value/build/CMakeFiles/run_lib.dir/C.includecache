@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../include/print.h
+stdio.h
+-
+
+../include/swap.h
+stdio.h
+-
+string.h
+-
+
 /home/ea/work/cmake/cmake_study/func_value/src/print.c
 print.h
 /home/ea/work/cmake/cmake_study/func_value/src/print.h
@@ -21,14 +31,4 @@ stdio.h
 -
 swap.h
 /home/ea/work/cmake/cmake_study/func_value/src/swap.h
-
-include/print.h
-stdio.h
--
-
-include/swap.h
-stdio.h
--
-string.h
--
 

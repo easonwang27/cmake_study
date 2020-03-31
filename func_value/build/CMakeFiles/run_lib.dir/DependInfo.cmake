@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/ea/work/cmake/cmake_study/func_value/src/print.c" "/home/ea/work/cmake/cmake_study/func_value/CMakeFiles/run_swap.dir/src/print.c.o"
-  "/home/ea/work/cmake/cmake_study/func_value/src/run.c" "/home/ea/work/cmake/cmake_study/func_value/CMakeFiles/run_swap.dir/src/run.c.o"
-  "/home/ea/work/cmake/cmake_study/func_value/src/swap.c" "/home/ea/work/cmake/cmake_study/func_value/CMakeFiles/run_swap.dir/src/swap.c.o"
+  "/home/ea/work/cmake/cmake_study/func_value/src/print.c" "/home/ea/work/cmake/cmake_study/func_value/build/CMakeFiles/run_lib.dir/src/print.c.o"
+  "/home/ea/work/cmake/cmake_study/func_value/src/run.c" "/home/ea/work/cmake/cmake_study/func_value/build/CMakeFiles/run_lib.dir/src/run.c.o"
+  "/home/ea/work/cmake/cmake_study/func_value/src/swap.c" "/home/ea/work/cmake/cmake_study/func_value/build/CMakeFiles/run_lib.dir/src/swap.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "include"
+  "../include"
   )
 
 # Targets to which this target links.

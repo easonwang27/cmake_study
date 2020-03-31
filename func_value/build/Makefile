@@ -51,21 +51,32 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/ea/work/cmake/cmake_study/func_value
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ea/work/cmake/cmake_study/func_value
+CMAKE_BINARY_DIR = /home/ea/work/cmake/cmake_study/func_value/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : edit_cache/fast
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +89,44 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ea/work/cmake/cmake_study/func_value/CMakeFiles /home/ea/work/cmake/cmake_study/func_value/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ea/work/cmake/cmake_study/func_value/build/CMakeFiles /home/ea/work/cmake/cmake_study/func_value/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ea/work/cmake/cmake_study/func_value/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ea/work/cmake/cmake_study/func_value/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +155,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named run_swap
+# Target rules for targets named run_lib
 
 # Build rule for target.
-run_swap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_swap
-.PHONY : run_swap
+run_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_lib
+.PHONY : run_lib
 
 # fast build rule for target.
-run_swap/fast:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/build
-.PHONY : run_swap/fast
+run_lib/fast:
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/build
+.PHONY : run_lib/fast
 
 src/print.o: src/print.c.o
 
@@ -129,7 +173,7 @@ src/print.o: src/print.c.o
 
 # target to build an object file
 src/print.c.o:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/print.c.o
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/print.c.o
 .PHONY : src/print.c.o
 
 src/print.i: src/print.c.i
@@ -138,7 +182,7 @@ src/print.i: src/print.c.i
 
 # target to preprocess a source file
 src/print.c.i:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/print.c.i
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/print.c.i
 .PHONY : src/print.c.i
 
 src/print.s: src/print.c.s
@@ -147,7 +191,7 @@ src/print.s: src/print.c.s
 
 # target to generate assembly for a file
 src/print.c.s:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/print.c.s
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/print.c.s
 .PHONY : src/print.c.s
 
 src/run.o: src/run.c.o
@@ -156,7 +200,7 @@ src/run.o: src/run.c.o
 
 # target to build an object file
 src/run.c.o:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/run.c.o
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/run.c.o
 .PHONY : src/run.c.o
 
 src/run.i: src/run.c.i
@@ -165,7 +209,7 @@ src/run.i: src/run.c.i
 
 # target to preprocess a source file
 src/run.c.i:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/run.c.i
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/run.c.i
 .PHONY : src/run.c.i
 
 src/run.s: src/run.c.s
@@ -174,7 +218,7 @@ src/run.s: src/run.c.s
 
 # target to generate assembly for a file
 src/run.c.s:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/run.c.s
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/run.c.s
 .PHONY : src/run.c.s
 
 src/swap.o: src/swap.c.o
@@ -183,7 +227,7 @@ src/swap.o: src/swap.c.o
 
 # target to build an object file
 src/swap.c.o:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/swap.c.o
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/swap.c.o
 .PHONY : src/swap.c.o
 
 src/swap.i: src/swap.c.i
@@ -192,7 +236,7 @@ src/swap.i: src/swap.c.i
 
 # target to preprocess a source file
 src/swap.c.i:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/swap.c.i
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/swap.c.i
 .PHONY : src/swap.c.i
 
 src/swap.s: src/swap.c.s
@@ -201,7 +245,7 @@ src/swap.s: src/swap.c.s
 
 # target to generate assembly for a file
 src/swap.c.s:
-	$(MAKE) -f CMakeFiles/run_swap.dir/build.make CMakeFiles/run_swap.dir/src/swap.c.s
+	$(MAKE) -f CMakeFiles/run_lib.dir/build.make CMakeFiles/run_lib.dir/src/swap.c.s
 .PHONY : src/swap.c.s
 
 # Help Target
@@ -210,9 +254,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... run_swap"
+	@echo "... run_lib"
+	@echo "... edit_cache"
+	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... src/print.o"
 	@echo "... src/print.i"
 	@echo "... src/print.s"

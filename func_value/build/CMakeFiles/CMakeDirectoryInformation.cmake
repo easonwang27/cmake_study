@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/ea/work/cmake/cmake_study/func_value")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/ea/work/cmake/cmake_study/func_value")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/ea/work/cmake/cmake_study/func_value/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
